@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pomodoro Timer</title>
 </head>
 <body>
     <style>
@@ -25,7 +25,7 @@
         <a href="calendar.html">
             <button> <img src="calendar.png"width = 50 alt=""></button>
            </a>
-        <a href="">
+        <a href="videos.html">
             <button><img src="video.png"width = 50 alt=""></button>
         </a>
        <a href="time.html">
@@ -34,6 +34,168 @@
      
     </a>
 </div>
+
+<div class="pomodoro">
+
+    <h1>Pomodoro Timer</h1>
+    <p style="color: #75539A;">Manage your time effectively with StudyUp!</p>
+
+    <h2 id="mode">Class time</h2>
+
+    <div id="timer">45:00</div>
+
+    <div class="buttons">
+        <button onclick="startTimer()">Start</button>
+
+        <button onclick="pauseTimer()">Pause</button>
+
+        <button onclick="resetTimer()">Reset</button>
+    </div>
+
+    <p id="message">Are you ready to start the lesson?</p>
+
+</div>
+<style>
+
+.pomodoro {
+    width: 350px;
+    margin: 40px auto;
+    padding: 30px;
+    text-align: center;
+    background: #F3E8FF;
+    border-radius: 25px;
+    box-shadow: 0 5px 20px #ddd;
+}
+
+.pomodoro h1 {
+    color: #6D28D9;
+}
+
+#mode {
+    color: #8B5CF6;
+}
+
+#timer {
+    font-size: 65px;
+    font-weight: bold;
+    color: #6D28D9;
+    margin: 25px;
+}
+
+.buttons button {
+    border: none;
+    padding: 12px 18px;
+    margin: 5px;
+    border-radius: 10px;
+    background: #8B5CF6;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.buttons button:hover {
+    background: #6D28D9;
+}
+
+#message {
+    color: #75539A;
+    margin-top: 20px;
+}
+
+</style>
+<script>
+
+let studyTime = 45 * 60;
+let breakTime = 5 * 60;
+
+let timeLeft = studyTime;
+let isStudy = true;
+let interval = null;
+
+function updateDisplay() {
+    let minutes = Math.floor(timeLeft / 60);
+    let seconds = timeLeft % 60;
+
+    document.getElementById("timer").textContent =
+        String(minutes).padStart(2, "0") + ":" +
+        String(seconds).padStart(2, "0");
+}
+
+function startTimer() {
+
+    if (interval !== null) return;
+
+    document.getElementById("message").textContent =
+        "Uğurlar! Fokuslanmağa başla!";
+
+    interval = setInterval(function() {
+
+        timeLeft--;
+
+        updateDisplay();
+
+        if (timeLeft <= 0) {
+
+            clearInterval(interval);
+            interval = null;
+
+            if (isStudy) {
+                isStudy = false;
+                timeLeft = breakTime;
+
+                document.getElementById("mode").textContent =
+                    "Fasilə vaxtı";
+
+                document.getElementById("message").textContent =
+                    "Əla! İndi 5 dəqiqə dincəl!";
+
+            } else {
+                isStudy = true;
+                timeLeft = studyTime;
+
+                document.getElementById("mode").textContent =
+                    "Dərs vaxtı";
+
+                document.getElementById("message").textContent =
+                    "Fasilə bitdi! Yenidən dərsə başla!";
+            }
+
+            updateDisplay();
+            startTimer();
+        }
+
+    }, 1000);
+}
+
+function pauseTimer() {
+    clearInterval(interval);
+    interval = null;
+
+    document.getElementById("message").textContent =
+        "Vaxt dayandırıldı.";
+}
+
+function resetTimer() {
+    clearInterval(interval);
+    interval = null;
+
+    isStudy = true;
+    timeLeft = studyTime;
+
+    document.getElementById("mode").textContent =
+        "Dərs vaxtı";
+
+    document.getElementById("message").textContent =
+        "Dərsə başlamağa hazırsan?";
+
+    updateDisplay();
+}
+
+updateDisplay();
+
+</script>
+<script src="script.js"></script>
+
 
 
 </body>
