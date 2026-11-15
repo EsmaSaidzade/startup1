@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Course | Student Hub</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6fb;
+            color: #25283d;
+        }
+
+        header {
+            background-color: #252d50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #d5d9e8;
+            font-size: 16px;
+        }
+
+        nav {
+            text-align: center;
+            padding: 18px;
+            background-color: white;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4d5b9a;
+            font-weight: bold;
+            margin: 0 12px;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .intro {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .lesson {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .lesson h2 {
+            color: #394777;
+        }
+
+        .lesson p {
+            line-height: 1.6;
+            color: #666b7b;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
+        .quiz {
+            background-color: #f0f2fa;
+            padding: 18px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        .quiz h3 {
+            color: #394777;
+        }
+
+        .quiz label {
+            display: block;
+            margin: 12px 0;
+        }
+
+        details {
+            margin-top: 15px;
+            color: #394777;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .next-course {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .next-course a {
+            display: inline-block;
+            background-color: #394777;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+        .next-course a:hover {
+            background-color: #5667a8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #777b8c;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            iframe {
+                height: 230px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Learn HTML</h1>
+        <p>Your first step into Web Development</p>
+    </header>
+
+    <nav>
+        <a href="../videos.html">All Courses</a>
+        <a href="css.html">Next Course: CSS →</a>
+    </nav>
+
+    <main>
+
+        <section class="intro">
+            <h2>About This Course</h2>
+
+            <p>
+                HTML stands for HyperText Markup Language.
+                It is the standard language used to create
+                and structure web pages.
+            </p>
+
+            <p>
+                In this beginner-friendly course, you will learn
+                how to create headings, paragraphs, links, images,
+                lists and forms. No previous HTML knowledge is required.
+            </p>
+
+            <p><strong>Level:</strong> Beginner</p>
+            <p><strong>What you need:</strong> A computer and a code editor such as VS Code.</p>
+        </section>
+
+
+        <!-- LESSON 1 -->
+
+        <section class="lesson">
+            <h2>Lesson 1: Introduction to HTML</h2>
+
+            <p>
+                Discover what HTML is, how it works and
+                how to create your first HTML document.
+            </p>
+
+            <p><strong>Topics:</strong></p>
+
+            <ul>
+                <li>What is HTML?</li>
+                <li>HTML document structure</li>
+                <li>Opening and closing tags</li>
+                <li>Headings and paragraphs</li>
+            </ul>
+
+            <iframe
+                src="https://www.youtube.com/embed/kUMe1FH4CHE?start=55"
+                title="HTML Introduction"
+                allowfullscreen>
+            </iframe>
+
+            <div class="quiz">
+                <h3>Quick Quiz 1</h3>
+
+                <p>1. What does HTML stand for?</p>
+
+                <label>
+                    <input type="radio" name="q1">
+                    HyperText Markup Language
+                </label>
+
+                <label>
+                    <input type="radio" name="q1">
+                    HighText Machine Language
+                </label>
+
+                <label>
+                    <input type="radio" name="q1">
+                    HyperTool Modern Language
+                </label>
+
+                <details>
+                    <summary>Show Answer</summary>
+                    <p>Correct answer: HyperText Markup Language.</p>
+                </details>
+            </div>
+        </section>
+
+
+        <!-- LESSON 2 -->
+
+        <section class="lesson">
+            <h2>Lesson 2: Text, Lists and Links</h2>
+
+            <p>
+                Learn how to organize website content and
+                connect different pages using HTML.
+            </p>
+
+            <p><strong>Topics:</strong></p>
+
+            <ul>
+                <li>Headings and text formatting</li>
+                <li>Ordered and unordered lists</li>
+                <li>Creating hyperlinks</li>
+                <li>Connecting different web pages</li>
+            </ul>
+
+            <iframe
+                src="https://www.youtube.com/embed/kUMe1FH4CHE?start=1742"
+                title="HTML Text Lists and Links"
+                allowfullscreen>
+            </iframe>
+
+            <div class="quiz">
+                <h3>Quick Quiz 2</h3>
+
+                <p>2. Which HTML tag creates a hyperlink?</p>
+
+                <label>
+                    <input type="radio" name="q2">
+                    &lt;p&gt;
+                </label>
+
+                <label>
+                    <input type="radio" name="q2">
+                    &lt;a&gt;
+                </label>
+
+                <label>
+                    <input type="radio" name="q2">
+                    &lt;h1&gt;
+                </label>
+
+                <details>
+                    <summary>Show Answer</summary>
+                    <p>Correct answer: &lt;a&gt;.</p>
+                </details>
+            </div>
+        </section>
+
+
+        <!-- LESSON 3 -->
+
+        <section class="lesson">
+            <h2>Lesson 3: Images, Tables and Forms</h2>
+
+            <p>
+                Explore more HTML elements and learn how
+                to add different types of content to a website.
+            </p>
+
+            <p><strong>Topics:</strong></p>
+
+            <ul>
+                <li>Adding images to a webpage</li>
+                <li>Creating tables</li>
+                <li>Using semantic HTML elements</li>
+                <li>Forms and input fields</li>
+            </ul>
+
+            <iframe
+                src="https://www.youtube.com/embed/kUMe1FH4CHE?start=5438"
+                title="HTML Images Tables and Semantic Elements"
+                allowfullscreen>
+            </iframe>
+
+            <div class="quiz">
+                <h3>Quick Quiz 3</h3>
+
+                <p>3. Which HTML tag is used to add an image?</p>
+
+                <label>
+                    <input type="radio" name="q3">
+                    &lt;image&gt;
+                </label>
+
+                <label>
+                    <input type="radio" name="q3">
+                    &lt;img&gt;
+                </label>
+
+                <label>
+                    <input type="radio" name="q3">
+                    &lt;picture-link&gt;
+                </label>
+
+                <details>
+                    <summary>Show Answer</summary>
+                    <p>Correct answer: &lt;img&gt;.</p>
+                </details>
+            </div>
+        </section>
+
+
+        <section class="next-course">
+            <h2>Ready for the Next Step?</h2>
+            <p>Continue your Web Development journey with CSS.</p>
+
+            <a href="css.html">Continue to CSS →</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Student Hub | Learn, Practice and Grow</p>
+    </footer>
+
+</body>
+</html>

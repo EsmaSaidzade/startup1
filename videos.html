@@ -3,8 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Courses | Student Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f6fa;
+            color: #25283d;
+        }
+
+        header {
+            text-align: center;
+            padding: 55px 20px 35px;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        header p {
+            font-size: 17px;
+            color: #777b8c;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 20px auto 60px;
+            padding: 0 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .course-section {
+            background-color: white;
+            padding: 28px;
+            border-radius: 18px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+        }
+
+        .course-section h2 {
+            font-size: 23px;
+            margin-top: 0;
+            margin-bottom: 22px;
+            color: #454b75;
+            border-bottom: 2px solid #eeeeF5;
+            padding-bottom: 15px;
+        }
+
+        .course-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .course-card {
+            display: block;
+            text-decoration: none;
+            color: #25283d;
+            background-color: #f5f6fb;
+            padding: 20px;
+            border-radius: 13px;
+            border: 1px solid #eceef5;
+            transition: 0.3s;
+        }
+
+        .course-card:hover {
+            background-color: #e9eafa;
+            transform: translateY(-4px);
+            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
+        }
+
+        .course-card h3 {
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 9px;
+            color: #505a9b;
+        }
+
+        .course-card p {
+            font-size: 14px;
+            color: #777b8c;
+            line-height: 1.5;
+        }
+
+        .course-card span {
+            display: inline-block;
+            margin-top: 8px;
+            color: #5965b3;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        @media (max-width: 800px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <style>
         i {
@@ -34,6 +139,68 @@
      
     </a>
 </div>
+
+    <header>
+        <h1>Explore Courses</h1>
+        <p>Learn new skills and build your future.</p>
+    </header>
+
+    <main>
+
+        <section class="course-section">
+            <h2>Web Development</h2>
+
+            <div class="course-container">
+
+                <a href="courses/html.html" class="course-card">
+                    <h3>HTML</h3>
+                    <p>Learn how to structure web pages.</p>
+                    <span>Start Learning →</span>
+                </a>
+
+                <a href="courses/css.html" class="course-card">
+                    <h3>CSS</h3>
+                    <p>Learn how to style and design websites.</p>
+                    <span>Start Learning →</span>
+                </a>
+
+                <a href="courses/javascript.html" class="course-card">
+                    <h3>JavaScript</h3>
+                    <p>Learn how to make websites interactive.</p>
+                    <span>Start Learning →</span>
+                </a>
+
+            </div>
+        </section>
+
+
+        <section class="course-section">
+            <h2>Programming Languages</h2>
+
+            <div class="course-container">
+
+                <a href="courses/python.html" class="course-card">
+                    <h3>Python</h3>
+                    <p>Discover programming with Python.</p>
+                    <span>Start Learning →</span>
+                </a>
+
+                <a href="courses/java.html" class="course-card">
+                    <h3>Java</h3>
+                    <p>Learn the fundamentals of Java.</p>
+                    <span>Start Learning →</span>
+                </a>
+
+                <a href="courses/cpp.html" class="course-card">
+                    <h3>C++</h3>
+                    <p>Explore programming with C++.</p>
+                    <span>Start Learning →</span>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
 
 </body>
 </html>

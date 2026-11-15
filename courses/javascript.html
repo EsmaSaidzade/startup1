@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Course | Student Hub</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6fb;
+            color: #25283d;
+        }
+
+        header {
+            background-color: #252d50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #d5d9e8;
+            font-size: 16px;
+        }
+
+        nav {
+            text-align: center;
+            padding: 18px;
+            background-color: white;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4d5b9a;
+            font-weight: bold;
+            margin: 0 12px;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .intro {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .lesson {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .lesson h2 {
+            color: #394777;
+        }
+
+        .lesson p {
+            line-height: 1.6;
+            color: #666b7b;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
+        .quiz {
+            background-color: #f0f2fa;
+            padding: 18px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        .quiz h3 {
+            color: #394777;
+        }
+
+        .quiz label {
+            display: block;
+            margin: 12px 0;
+        }
+
+        details {
+            margin-top: 15px;
+            color: #394777;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .next-course {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .next-course a {
+            display: inline-block;
+            background-color: #394777;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+        .next-course a:hover {
+            background-color: #5667a8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #777b8c;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            iframe {
+                height: 230px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Learn JavaScript</h1>
+        <p>Make your websites interactive and dynamic</p>
+    </header>
+
+    <nav>
+        <a href="../videos.html">All Courses</a>
+        <a href="css.html">← Previous: CSS</a>
+    </nav>
+
+    <main>
+
+        <section class="intro">
+            <h2>About This Course</h2>
+
+            <p>
+                JavaScript is a programming language that makes
+                websites interactive and dynamic.
+            </p>
+
+            <p>
+                In this beginner-friendly course, you will learn
+                programming basics, variables, data types,
+                conditions, loops and functions.
+            </p>
+
+            <p><strong>Level:</strong> Beginner</p>
+            <p><strong>What you need:</strong> Basic HTML and CSS knowledge and a code editor such as VS Code.</p>
+        </section>
+
+
+        <!-- LESSON 1 -->
+
+        <section class="lesson">
+            <h2>Lesson 1: Introduction to JavaScript</h2>
+
+            <p>
+                Discover what JavaScript is and how it works
+                together with HTML and CSS.
+            </p>
+
+            <p><strong>Topics:</strong></p>
+
+            <ul>
+                <li>What is JavaScript?</li>
+                <li>Adding JavaScript to HTML</li>
+                <li>Variables and data types</li>
+                <li>Basic operators</li>
+            </ul>
+
+            <iframe
+                src="https://www.youtube.com/embed/PkZNo7MFNFg?start=0"
+                title="JavaScript Introduction"
+                allowfullscreen>
+            </iframe>
+
+            <div class="quiz">
+                <h3>Quick Quiz 1</h3>
+
+                <p>1. What is JavaScript mainly used for?</p>
+
+                <label>
+                    <input type="radio" name="q1">
+                    Styling web pages
+                </label>
+
+                <label>
+                    <input type="radio" name="q1">
+                    Making websites interactive
+                </label>
+
+                <label>
+                    <input type="radio" name="q1">
+                    Structuring web pages
+                </label>
+
+                <details>
+                    <summary>Show Answer</summary>
+                    <p>Correct answer: Making websites interactive.</p>
+                </details>
+            </div>
+        </section>
+
+
+        <!-- LESSON 2 -->
+
+        <section class="lesson">
+            <h2>Lesson 2: Conditions and Loops</h2>
+
+            <p>
+                Learn how to make decisions in your programs
+                and repeat instructions using loops.
+            </p>
+
+            <p><strong>Topics:</strong></p>
+
+            <ul>
+                <li>Comparison operators</li>
+                <li>If and else statements</li>
+                <li>For loops</li>
+                <li>While loops</li>
+            </ul>
+
+            <iframe
+                src="https://www.youtube.com/embed/PkZNo7MFNFg?start=1800"
+                title="JavaScript Conditions and Loops"
+                allowfullscreen>
+            </iframe>
+
+            <div class="quiz">
+                <h3>Quick Quiz 2</h3>
+
+                <p>2. Which statement is used to make a decision in JavaScript?</p>
+
+                <label>
+                    <input type="radio" name="q2">
+                    if...else
+                </label>
+
+                <label>
+                    <input type="radio" name="q2">
+                    repeat...text
+                </label>
+
+                <label>
+                    <input type="radio" name="q2">
+                    style...color
+                </label>
+
+                <details>
+                    <summary>Show Answer</summary>
+                    <p>Correct answer: if...else.</p>
+                </details>
+            </div>
+        </section>
+
+
+        <!-- LESSON 3 -->
+
+        <section class="lesson">
+            <h2>Lesson 3: Functions and Events</h2>
+
+            <p>
+                Discover how to organize code into reusable
+                functions and respond to user actions.
+            </p>
+
+            <p><strong>Topics:</strong></p>
+
+            <ul>
+                <li>Creating functions</li>
+                <li>Function parameters and return values</li>
+                <li>JavaScript events</li>
+                <li>Responding to button clicks</li>
+            </ul>
+
+            <iframe
+                src="https://www.youtube.com/embed/PkZNo7MFNFg?start=3600"
+                title="JavaScript Functions and Events"
+                allowfullscreen>
+            </iframe>
+
+            <div class="quiz">
+                <h3>Quick Quiz 3</h3>
+
+                <p>3. Which keyword is used to define a function in JavaScript?</p>
+
+                <label>
+                    <input type="radio" name="q3">
+                    function
+                </label>
+
+                <label>
+                    <input type="radio" name="q3">
+                    create
+                </label>
+
+                <label>
+                    <input type="radio" name="q3">
+                    method
+                </label>
+
+                <details>
+                    <summary>Show Answer</summary>
+                    <p>Correct answer: function.</p>
+                </details>
+            </div>
+        </section>
+
+
+        <section class="next-course">
+            <h2>Web Development Completed!</h2>
+            <p>You have explored HTML, CSS and JavaScript.</p>
+
+            <a href="../videos.html">Back to All Courses →</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Student Hub | Learn, Practice and Grow</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Course | Student Hub</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6fb;
+            color: #25283d;
+        }
+
+        header {
+            background-color: #252d50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #d5d9e8;
+            font-size: 16px;
+        }
+
+        nav {
+            text-align: center;
+            padding: 18px;
+            background-color: white;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4d5b9a;
+            font-weight: bold;
+            margin: 0 12px;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .intro {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .lesson {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .lesson h2 {
+            color: #394777;
+        }
+
+        .lesson p {
+            line-height: 1.6;
+            color: #666b7b;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
+        .quiz {
+            background-color: #f0f2fa;
+            padding: 18px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        .quiz h3 {
+            color: #394777;
+        }
+
+        .quiz label {
+            display: block;
+            margin: 12px 0;
+        }
+
+        details {
+            margin-top: 15px;
+            color: #394777;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .next-course {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .next-course a {
+            display: inline-block;
+            background-color: #394777;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+        .next-course a:hover {
+            background-color: #5667a8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #777b8c;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            iframe {
+                height: 230px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Learn Python</h1>
+        <p>Start your programming journey with Python</p>
+    </header>
+
+    <nav>
+        <a href="../videos.html">All Courses</a>
+        <a href="javascript.html">← Previous Course</a>
+        <a href="java.html">Next Course: Java →</a>
+    </nav>
+
+    <main>
+
+        <!-- COURSE INTRODUCTION -->
+
+        <section class="intro">
+            <h2>About This Course</h2>
+
+            <p>
+                Python is a popular, high-level programming language
+                known for its simple and readable syntax.
+                It is used in web development, data science,
+                artificial intelligence and automation.
+            </p>
+
+            <p>
+                In this beginner-friendly course, you will learn
+                programming fundamentals and how to write your
+                first Python programs.
+            </p>
+
+            <p><strong>Level:</strong> Beginner</p>
+
+            <p>
+                <strong>What you need:</strong>
+                A computer and Python installed, or an online
+                Python editor.
+            </p>
+        </section>
+
+
+        <!-- LESSON 1 -->
+
+        <section class="lesson">
+            <h2>Lesson 1: Python Basics</h2>
+
+            <p>
+                Learn the fundamentals of Python and understand
+                how to write your first lines of code.
+            </p>
+
+            <p><strong>Topics:</strong></p>
+
+            <ul>
+                <li>What is Python?</li>
+                <li>Variables and data types</li>
+                <li>Strings, integers and floats</li>
+                <li>Arithmetic and comparison operators</li>
+                <li>Printing information with print()</li>
+            </ul>
+
+            <iframe
+                src="https://www.youtube.com/embed/eWRfhZUzrAc?start=2625"
+                title="Python Basics"
+                allowfullscreen>
+            </iframe>
+
+            <div class="quiz">
+                <h3>Quick Quiz 1</h3>
+
+                <p>1. Which function displays information in Python?</p>
+
+                <label>
+                    <input type="radio" name="q1">
+                    display()
+                </label>
+
+                <label>
+                    <input type="radio" name="q1">
+                    print()
+                </label>
+
+                <label>
+                    <input type="radio" name="q1">
+                    show()
+                </label>
+
+                <details>
+                    <summary>Show Answer</summary>
+                    <p>Correct answer: print().</p>
+                </details>
+            </div>
+        </section>
+
+
+        <!-- LESSON 2 -->
+
+        <section class="lesson">
+            <h2>Lesson 2: Conditions, Loops and Lists</h2>
+
+            <p>
+                Learn how to make decisions, repeat instructions
+                and store multiple values in Python.
+            </p>
+
+            <p><strong>Topics:</strong></p>
+
+            <ul>
+                <li>If, elif and else statements</li>
+                <li>For loops and while loops</li>
+                <li>Creating and accessing lists</li>
+                <li>Working with list elements</li>
+            </ul>
+
+            <iframe
+                src="https://www.youtube.com/embed/eWRfhZUzrAc?start=5679"
+                title="Python Conditions and Lists"
+                allowfullscreen>
+            </iframe>
+
+            <div class="quiz">
+                <h3>Quick Quiz 2</h3>
+
+                <p>2. Which keyword is used to check a condition in Python?</p>
+
+                <label>
+                    <input type="radio" name="q2">
+                    if
+                </label>
+
+                <label>
+                    <input type="radio" name="q2">
+                    repeat
+                </label>
+
+                <label>
+                    <input type="radio" name="q2">
+                    check
+                </label>
+
+                <details>
+                    <summary>Show Answer</summary>
+                    <p>Correct answer: if.</p>
+                </details>
+            </div>
+        </section>
+
+
+        <!-- LESSON 3 -->
+
+        <section class="lesson">
+            <h2>Lesson 3: Functions and Dictionaries</h2>
+
+            <p>
+                Discover how to organize your code using functions
+                and store information using dictionaries.
+            </p>
+
+            <p><strong>Topics:</strong></p>
+
+            <ul>
+                <li>Creating and calling functions</li>
+                <li>Function parameters</li>
+                <li>Return values</li>
+                <li>Creating dictionaries</li>
+                <li>Accessing dictionary values</li>
+            </ul>
+
+            <iframe
+                src="https://www.youtube.com/embed/eWRfhZUzrAc?start=6790"
+                title="Python Functions and Dictionaries"
+                allowfullscreen>
+            </iframe>
+
+            <div class="quiz">
+                <h3>Quick Quiz 3</h3>
+
+                <p>3. Which keyword is used to define a function in Python?</p>
+
+                <label>
+                    <input type="radio" name="q3">
+                    function
+                </label>
+
+                <label>
+                    <input type="radio" name="q3">
+                    def
+                </label>
+
+                <label>
+                    <input type="radio" name="q3">
+                    create
+                </label>
+
+                <details>
+                    <summary>Show Answer</summary>
+                    <p>Correct answer: def.</p>
+                </details>
+            </div>
+        </section>
+
+
+        <!-- NEXT COURSE -->
+
+        <section class="next-course">
+            <h2>Ready for the Next Step?</h2>
+
+            <p>
+                Continue your programming journey
+                and discover Java.
+            </p>
+
+            <a href="java.html">Continue to Java →</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Student Hub | Learn, Practice and Grow</p>
+    </footer>
+
+</body>
+</html>

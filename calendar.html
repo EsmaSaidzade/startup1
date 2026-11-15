@@ -1,90 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Calendar</title>
+
+<style>
+    .day-section a {
+    color: #745b9c;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.day-section a:hover {
+    text-decoration: underline;
+}
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f3fa;
+        margin: 0;
+        padding: 30px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #554477;
+    }
+
+    .calendar-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 35px;
+        margin-top: 30px;
+    }
+
+    .month {
+        background-color: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        width: 340px;
+    }
+
+    h2 {
+        text-align: center;
+        color: #745b9c;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+    }
+
+    th {
+        background-color: #745b9c;
+        color: white;
+        padding: 10px 2px;
+        font-size: 12px;
+    }
+
+    td {
+        border: 1px solid #e5e0ed;
+        height: 55px;
+        text-align: center;
+    }
+
+    td a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 34px;
+        height: 34px;
+        margin: auto;
+        border-radius: 50%;
+        text-decoration: none;
+        color: #554477;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    td a:hover {
+        background-color: #745b9c;
+        color: white;
+    }
+
+    .empty {
+        background-color: #faf9fc;
+    }
+
+    /* Weekday subject sections */
+
+    .subjects {
+        max-width: 750px;
+        margin: 50px auto;
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+    }
+
+    .subjects h2 {
+        text-align: left;
+        border-bottom: 2px solid #e5e0ed;
+        padding-bottom: 10px;
+    }
+
+    .day-section {
+        padding: 15px;
+        margin-bottom: 15px;
+        background-color: #f5f3fa;
+        border-radius: 10px;
+        scroll-margin-top: 20px;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
 </head>
+
 <body>
-    <style>
-        i {
-            font-size: 40px;
-          color: darkorchid;
-        }
-
-        body {
-            background-image: url("image copy.png");
-            background-size: cover;
-        }
-    </style>
-    <div style="text-align: center;">
-        <a href="index.html">
-            <button><img src="home.png"width = 50  alt=""></button>
+   <div style="text-align: center;">
+    <a href="index.html">
+        <button><img src="home.png"width = 50  alt=""></button>
+       </a>
+       <a href="">
+        <a href="calendar.html">
+            <button> <img src="calendar.png"width = 50 alt=""></button>
            </a>
-           <a href="">
-            <a href="calendar.html">
-                <button> <img src="calendar.png"width = 50 alt=""></button>
-               </a>
-            <a href="videos.html">
-                <button><img src="video.png"width = 50 alt=""></button>
-            </a>
-           <a href="time.html">
-            <button><img src="time.png"width = 50  alt=""></button>
-           </a>
-         
+        <a href="videos.html">
+            <button><img src="video.png"width = 50 alt=""></button>
         </a>
+       <a href="time.html">
+        <button><img src="time.png"width = 50  alt=""></button>
+       </a>
+     
+    </a>
+</div>
+
+<h1>My Study Calendar</h1>
+
+<div class="calendar-container">
+
+    <!-- NOVEMBER 2026 -->
+
+    <div class="month">
+        <h2>November 2026</h2>
+
+        <table>
+            <tr>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+                <th>Sun</th>
+            </tr>
+
+            <tr>
+                <td class="empty"></td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+                <td><a href="#sunday">1</a></td>
+            </tr>
+
+            <tr>
+                <td><a href="#monday">2</a></td>
+                <td><a href="#tuesday">3</a></td>
+                <td><a href="#wednesday">4</a></td>
+                <td><a href="#thursday">5</a></td>
+                <td><a href="#friday">6</a></td>
+                <td><a href="#saturday">7</a></td>
+                <td><a href="#sunday">8</a></td>
+            </tr>
+
+            <tr>
+                <td><a href="#monday">9</a></td>
+                <td><a href="#tuesday">10</a></td>
+                <td><a href="#wednesday">11</a></td>
+                <td><a href="#thursday">12</a></td>
+                <td><a href="#friday">13</a></td>
+                <td><a href="#saturday">14</a></td>
+                <td><a href="#sunday">15</a></td>
+            </tr>
+
+            <tr>
+                <td><a href="#monday">16</a></td>
+                <td><a href="#tuesday">17</a></td>
+                <td><a href="#wednesday">18</a></td>
+                <td><a href="#thursday">19</a></td>
+                <td><a href="#friday">20</a></td>
+                <td><a href="#saturday">21</a></td>
+                <td><a href="#sunday">22</a></td>
+            </tr>
+
+            <tr>
+                <td><a href="#monday">23</a></td>
+                <td><a href="#tuesday">24</a></td>
+                <td><a href="#wednesday">25</a></td>
+                <td><a href="#thursday">26</a></td>
+                <td><a href="#friday">27</a></td>
+                <td><a href="#saturday">28</a></td>
+                <td><a href="#sunday">29</a></td>
+            </tr>
+
+            <tr>
+                <td><a href="#monday">30</a></td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+            </tr>
+        </table>
     </div>
-    <h1 style="color: darkviolet;">Ders cedvelim</h1>
-    <h4 style="color: darkviolet;">Hefteni planlasdir,ugurunu artir!</h4>
 
-<section class="schedule">
-    <p>Həftəlik dərs planini burada izlə!</p>
 
-    <table border="5" style="background-color: darkorchid;">
-        <tr>
-            <th>Gün</th>
-            <th>09:00 - 10:00</th>
-            <th>10:00 - 11:00</th>
-            <th>11:00 - 12:00</th>
-        </tr>
+    <!-- DECEMBER 2026 -->
 
-        <tr>
-            <td>Bazar ertəsi</td>
-            <td>Riyaziyyat</td>
-            <td>İngilis dili</td>
-            <td>İnformatika</td>
-        </tr>
+    <div class="month">
+        <h2>December 2026</h2>
 
-        <tr>
-            <td>Çərşənbə axşami</td>
-            <td>Tarix</td>
-            <td>Proqramlaşdirma</td>
-            <td>Azərbaycan dili</td>
-        </tr>
+        <table>
+            <tr>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+                <th>Sun</th>
+            </tr>
 
-        <tr>
-            <td>Çərşənbə</td>
-            <td>İngilis dili</td>
-            <td>Riyaziyyat</td>
-            <td>Tarix</td>
-        </tr>
+            <tr>
+                <td class="empty"></td>
+                <td><a href="#tuesday">1</a></td>
+                <td><a href="#wednesday">2</a></td>
+                <td><a href="#thursday">3</a></td>
+                <td><a href="#friday">4</a></td>
+                <td><a href="#saturday">5</a></td>
+                <td><a href="#sunday">6</a></td>
+            </tr>
 
-        <tr>
-            <td>Cümə axşami</td>
-            <td>İnformatika</td>
-            <td>Azərbaycan dili</td>
-            <td>Riyaziyyat</td>
-        </tr>
+            <tr>
+                <td><a href="#monday">7</a></td>
+                <td><a href="#tuesday">8</a></td>
+                <td><a href="#wednesday">9</a></td>
+                <td><a href="#thursday">10</a></td>
+                <td><a href="#friday">11</a></td>
+                <td><a href="#saturday">12</a></td>
+                <td><a href="#sunday">13</a></td>
+            </tr>
 
-        <tr>
-            <td>Cümə</td>
-            <td>Proqramlaşdirma</td>
-            <td>İngilis dili</td>
-            <td>Tarix</td>
-        </tr>
-    </table>
-</section>
+            <tr>
+                <td><a href="#monday">14</a></td>
+                <td><a href="#tuesday">15</a></td>
+                <td><a href="#wednesday">16</a></td>
+                <td><a href="#thursday">17</a></td>
+                <td><a href="#friday">18</a></td>
+                <td><a href="#saturday">19</a></td>
+                <td><a href="#sunday">20</a></td>
+            </tr>
 
+            <tr>
+                <td><a href="#monday">21</a></td>
+                <td><a href="#tuesday">22</a></td>
+                <td><a href="#wednesday">23</a></td>
+                <td><a href="#thursday">24</a></td>
+                <td><a href="#friday">25</a></td>
+                <td><a href="#saturday">26</a></td>
+                <td><a href="#sunday">27</a></td>
+            </tr>
+
+            <tr>
+                <td><a href="#monday">28</a></td>
+                <td><a href="#tuesday">29</a></td>
+                <td><a href="#wednesday">30</a></td>
+                <td><a href="#thursday">31</a></td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+
+<!-- SUBJECT SECTIONS -->
+
+<div class="subjects">
+
+    <div class="day-section" id="monday">
+        <h2>Monday Subjects</h2>
+        <p>Here are your Monday subjects.</p>
+    </div>
+
+    <div class="day-section" id="tuesday">
+        <h2>Tuesday Subjects</h2>
+        <p>Here are your Tuesday subjects.</p>
+    </div>
+
+    <div class="day-section" id="wednesday">
+        <h2>Wednesday Subjects</h2>
+        <p>Here are your Wednesday subjects.</p>
+    </div>
+
+    <div class="day-section" id="thursday">
+        <h2>Thursday Subjects</h2>
+        <p>Here are your Thursday subjects.</p>
+    </div>
+
+    <div class="day-section" id="friday">
+        <h2>Friday Subjects</h2>
+        <p>Here are your Friday subjects.</p>
+    </div>
+
+    <div class="day-section" id="saturday">
+        <h2>Saturday Subjects</h2>
+        <p>Here are your Saturday subjects.</p>
+    </div>
+
+    <div class="day-section" id="sunday">
+        <h2>Sunday Subjects</h2>
+        <p>Here are your Sunday subjects.</p>
+    </div>
+
+</div>
 
 </body>
 </html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Course - Student Hub</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6fb;
+            color: #25283d;
+        }
+
+        header {
+            background-color: #252d50;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        nav {
+            background-color: #394777;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .lesson {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            color: #394777;
+        }
+
+        h3 {
+            color: #252d50;
+        }
+
+        p, li {
+            line-height: 1.6;
+        }
+
+        pre {
+            background-color: #eef1f8;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .quiz {
+            background-color: #f4f6fb;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        details {
+            margin-top: 10px;
+        }
+
+        summary {
+            color: #394777;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .navigation a {
+            background-color: #394777;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #252d50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 600px) {
+            iframe {
+                height: 230px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Java Programming Course</h1>
+    <p>Learn the basics of Java step by step</p>
+</header>
+
+<nav>
+    <a href="../videos.html">Courses</a>
+    <a href="python.html">← Previous Course</a>
+    <a href="cpp.html">Next Course: Java →</a>
+</nav>
+
+<div class="container">
+
+    <section class="lesson">
+        <h2>Lesson 1: Introduction to Java</h2>
+
+        <p>
+            Java is a popular programming language used to create
+            applications, websites, desktop programs and Android apps.
+            It is an object-oriented programming language.
+        </p>
+
+        <h3>What is a Java program?</h3>
+        <p>
+            A Java program contains instructions that tell the computer
+            what to do. A simple Java program looks like this:
+        </p>
+
+        <pre>
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+    }
+}
+        </pre>
+
+        <p>
+            <strong>System.out.println()</strong> displays text in the output.
+            The main method is where a simple Java program starts running.
+        </p>
+
+        <h3>Variables and Data Types</h3>
+        <p>
+            Variables store information. Java requires us to specify
+            the data type of a variable.
+        </p>
+
+        <pre>
+int age = 20;
+double price = 12.5;
+String name = "Alex";
+boolean isStudent = true;
+        </pre>
+
+        <h3>Watch the Lesson</h3>
+        <iframe
+            src="https://www.youtube.com/embed/A74TOX803D0?start=0"
+            title="Java beginner tutorial"
+            allowfullscreen>
+        </iframe>
+
+        <div class="quiz">
+            <h3>Quick Quiz</h3>
+
+            <p>1. Which keyword is used to create a class in Java?</p>
+            <details>
+                <summary>Show Answer</summary>
+                <p>class</p>
+            </details>
+
+            <p>2. Which command displays text in the output?</p>
+            <details>
+                <summary>Show Answer</summary>
+                <p>System.out.println()</p>
+            </details>
+
+            <p>3. Which data type is used for whole numbers?</p>
+            <details>
+                <summary>Show Answer</summary>
+                <p>int</p>
+            </details>
+        </div>
+    </section>
+
+    <section class="lesson">
+        <h2>Lesson 2: Conditions, Loops and Arrays</h2>
+
+        <h3>Conditions</h3>
+        <p>
+            Conditions allow a program to make decisions.
+            The if and else statements execute different instructions
+            depending on whether a condition is true or false.
+        </p>
+
+        <pre>
+int age = 20;
+
+if (age >= 18) {
+    System.out.println("Adult");
+} else {
+    System.out.println("Not an adult");
+}
+        </pre>
+
+        <h3>Loops</h3>
+        <p>
+            Loops repeat instructions. Java has different types of loops,
+            including for and while.
+        </p>
+
+        <pre>
+for (int i = 1; i <= 5; i++) {
+    System.out.println(i);
+}
+        </pre>
+
+        <p>This loop prints numbers from 1 to 5.</p>
+
+        <h3>Arrays</h3>
+        <p>
+            An array stores multiple values of the same data type
+            in one variable.
+        </p>
+
+        <pre>
+int[] numbers = {10, 20, 30, 40};
+
+System.out.println(numbers[0]);
+        </pre>
+
+        <p>
+            Array positions start at 0. Therefore, numbers[0] gives 10.
+        </p>
+
+        <h3>Watch the Lesson</h3>
+        <iframe
+            src="https://www.youtube.com/embed/A74TOX803D0?start=1800"
+            title="Java conditions and loops"
+            allowfullscreen>
+        </iframe>
+
+        <div class="quiz">
+            <h3>Quick Quiz</h3>
+
+            <p>1. Which statement is used for making decisions?</p>
+            <details>
+                <summary>Show Answer</summary>
+                <p>if</p>
+            </details>
+
+            <p>2. Which loop is useful for repeating instructions a specific number of times?</p>
+            <details>
+                <summary>Show Answer</summary>
+                <p>for loop</p>
+            </details>
+
+            <p>3. What is the first index of an array?</p>
+            <details>
+                <summary>Show Answer</summary>
+                <p>0</p>
+            </details>
+        </div>
+    </section>
+
+    <section class="lesson">
+        <h2>Lesson 3: Methods and Classes</h2>
+
+        <h3>Methods</h3>
+        <p>
+            A method is a block of code that performs a particular task.
+            Methods help us organize and reuse code.
+        </p>
+
+        <pre>
+public static void greet() {
+    System.out.println("Welcome to Java!");
+}
+
+public static void main(String[] args) {
+    greet();
+}
+        </pre>
+
+        <h3>Parameters</h3>
+        <p>
+            Parameters allow us to send information to a method.
+        </p>
+
+        <pre>
+public static void greet(String name) {
+    System.out.println("Hello " + name);
+}
+        </pre>
+
+        <h3>Classes and Objects</h3>
+        <p>
+            A class is a blueprint used to create objects.
+            Objects can have their own data and behavior.
+        </p>
+
+        <pre>
+class Student {
+    String name;
+    int age;
+}
+        </pre>
+
+        <p>
+            Here, Student is a class with two variables:
+            name and age.
+        </p>
+
+        <h3>Watch the Lesson</h3>
+        <iframe
+            src="https://www.youtube.com/embed/A74TOX803D0?start=3600"
+            title="Java methods and classes"
+            allowfullscreen>
+        </iframe>
+
+        <div class="quiz">
+            <h3>Quick Quiz</h3>
+
+            <p>1. What is a method?</p>
+            <details>
+                <summary>Show Answer</summary>
+                <p>A block of code that performs a specific task.</p>
+            </details>
+
+            <p>2. What is a class?</p>
+            <details>
+                <summary>Show Answer</summary>
+                <p>A blueprint for creating objects.</p>
+            </details>
+
+            <p>3. What do parameters do?</p>
+            <details>
+                <summary>Show Answer</summary>
+                <p>They allow information to be passed to a method.</p>
+            </details>
+        </div>
+    </section>
+
+       <section class="navigation">
+            <h2>Ready for the Next Step?</h2>
+
+            <p>
+                Continue your programming journey
+                and discover C++.
+            </p>
+
+            <a href="cpp.html">Continue to C++ →</a>
+        </section>
+
+</div>
+
+<footer>
+    <p>Student Hub | Learn Something New Every Day</p>
+</footer>
+
+</body>
+</html>
