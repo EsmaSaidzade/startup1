@@ -126,7 +126,7 @@ function startTimer() {
     if (interval !== null) return;
 
     document.getElementById("message").textContent =
-        "Uğurlar! Fokuslanmağa başla!";
+        "Good luck! Start focusing!";
 
     interval = setInterval(function() {
 
@@ -154,7 +154,7 @@ function startTimer() {
                 timeLeft = studyTime;
 
                 document.getElementById("mode").textContent =
-                    "Dərs vaxtı";
+                    "Class time";
 
                 document.getElementById("message").textContent =
                     "Fasilə bitdi! Yenidən dərsə başla!";
@@ -172,7 +172,7 @@ function pauseTimer() {
     interval = null;
 
     document.getElementById("message").textContent =
-        "Vaxt dayandırıldı.";
+        "Time was stopped.";
 }
 
 function resetTimer() {
@@ -183,10 +183,10 @@ function resetTimer() {
     timeLeft = studyTime;
 
     document.getElementById("mode").textContent =
-        "Dərs vaxtı";
+        "Class time";
 
     document.getElementById("message").textContent =
-        "Dərsə başlamağa hazırsan?";
+        "Are you ready to start the lesson?";
 
     updateDisplay();
 }
@@ -194,7 +194,262 @@ function resetTimer() {
 updateDisplay();
 
 </script>
-<script src="script.js"></script>
+
+<h1 class="main-title">StudyUp Time</h1>
+
+    <div class="container">
+
+        <!-- COUNTDOWN -->
+        <div class="card">
+            <h2>⏳ Countdown</h2>
+            <p>İmtahan tarixinə nə qədər qalıb?</p>
+
+            <label>İmtahan tarixini seç:</label>
+            <input type="datetime-local" id="examDate">
+
+            <div id="countdown">
+                00 Gün : 00 Saat : 00 Dəqiqə : 00 Saniyə
+            </div>
+
+            <p id="countMessage"></p>
+        </div>
+
+        <!-- DAILY GOAL -->
+        <div class="card">
+            <h2>🎯 Daily Goal</h2>
+            <p>Gündəlik dərs məqsədini müəyyən et!</p>
+
+            <label>Gündə neçə dəqiqə dərs oxumaq istəyirsən?</label>
+            <input type="number" id="goal" placeholder="Məsələn: 120" min="1">
+
+            <button onclick="setGoal()">Məqsədi təyin et</button>
+
+            <h3 id="goalText">Günlük məqsəd: 0 dəqiqə</h3>
+
+            <label>Bu gün neçə dəqiqə dərs oxumusan?</label>
+            <input type="number" id="studied" placeholder="Dəqiqə daxil et" min="0">
+
+            <button onclick="updateGoal()">Yenilə</button>
+
+            <div class="progress">
+                <div id="progressBar"></div>
+            </div>
+
+            <h3 id="progressText">0% tamamlandı</h3>
+
+            <p id="goalMessage"></p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>\
+
+    <style>
+
+body {
+    background: linear-gradient(
+        135deg,
+        #E9D5FF,
+        #FFFFFF,
+        #DDD6FE
+    );
+
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 30px;
+    text-align: center;
+}
+
+.main-title {
+    color: #7136A5;
+    font-size: 38px;
+}
+
+.subtitle {
+    color: #8063A5;
+    margin-bottom: 35px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    width: 350px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px #D8C5ED;
+}
+
+.card h2 {
+    color: #7136A5;
+}
+
+.card p {
+    color: #777;
+}
+
+.card input {
+    width: 90%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #C4A7E7;
+    border-radius: 10px;
+}
+
+.card button {
+    background: #8B5CF6;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 8px;
+}
+
+.card button:hover {
+    background: #6D28D9;
+}
+
+#countdown {
+    color: #7136A5;
+    font-size: 21px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+.progress {
+    width: 100%;
+    height: 18px;
+    background: #E9D5FF;
+    border-radius: 20px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+#progressBar {
+    width: 0%;
+    height: 100%;
+    background: #8B5CF6;
+    border-radius: 20px;
+    transition: width 0.5s;
+}
+
+    </style>
+    <script>
+
+let countdownInterval = null;
+
+// COUNTDOWN
+
+function startCountdown() {
+
+    clearInterval(countdownInterval);
+
+    let examDate = document.getElementById("examDate").value;
+    let countdown = document.getElementById("countdown");
+    let message = document.getElementById("countMessage");
+
+    if (!examDate) {
+        message.textContent = "Zəhmət olmasa tarix seç!";
+        return;
+    }
+
+    let targetDate = new Date(examDate).getTime();
+
+    function updateCountdown() {
+
+        let now = new Date().getTime();
+        let difference = targetDate - now;
+
+        if (difference <= 0) {
+            countdown.textContent = "00 Gün : 00 Saat : 00 Dəqiqə : 00 Saniyə";
+            message.textContent = "İmtahan vaxtı çatdı!";
+            clearInterval(countdownInterval);
+            return;
+        }
+
+        let days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+        let minutes = Math.floor((difference / (1000 * 60)) % 60);
+        let seconds = Math.floor((difference / 1000) % 60);
+
+        countdown.textContent =
+            days + " Gün : " +
+            hours + " Saat : " +
+            minutes + " Dəqiqə : " +
+            seconds + " Saniyə";
+
+        message.textContent = "İmtahana hazırlaşmağa davam et!";
+    }
+
+    updateCountdown();
+
+    if (targetDate > Date.now()) {
+        countdownInterval = setInterval(updateCountdown, 1000);
+    }
+}
+
+document.getElementById("examDate").addEventListener("change", startCountdown);
+
+
+// DAILY GOAL
+
+let dailyGoal = 0;
+
+function setGoal() {
+
+    dailyGoal = Number(document.getElementById("goal").value);
+
+    if (!Number.isFinite(dailyGoal) || dailyGoal <= 0) {
+        alert("Düzgün dəqiqə sayı daxil et!");
+        return;
+    }
+
+    document.getElementById("goalText").textContent =
+        "Günlük məqsəd: " + dailyGoal + " dəqiqə";
+
+    updateGoal();
+}
+
+function updateGoal() {
+
+    let studied = Number(document.getElementById("studied").value);
+
+    if (dailyGoal <= 0) {
+        alert("Əvvəlcə günlük məqsədini təyin et!");
+        return;
+    }
+
+    if (!Number.isFinite(studied) || studied < 0) {
+        alert("Düzgün dəqiqə sayı daxil et!");
+        return;
+    }
+
+    let percent = Math.min((studied / dailyGoal) * 100, 100);
+
+    document.getElementById("progressBar").style.width =
+        percent + "%";
+
+    document.getElementById("progressText").textContent =
+        Math.round(percent) + "% tamamlandı";
+
+    if (studied >= dailyGoal) {
+        document.getElementById("goalMessage").textContent =
+            "Təbriklər! Günlük məqsədinə çatdın!";
+    } else {
+        document.getElementById("goalMessage").textContent =
+            "Əla! Daha " + (dailyGoal - studied) +
+            " dəqiqə dərs oxumalısan.";
+    }
+}
+
+    </script>
 
 
 
